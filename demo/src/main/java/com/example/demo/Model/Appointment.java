@@ -10,7 +10,7 @@ import java.time.LocalTime;
 public class Appointment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long Id;
 
     @ManyToOne
     @JoinColumn(name = "patient_id")
