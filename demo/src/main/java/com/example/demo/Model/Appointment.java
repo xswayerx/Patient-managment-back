@@ -16,10 +16,18 @@ public class Appointment {
     @JoinColumn(name = "patient_id")
     private Patient patient;
 
+    @Transient
+    private Long patientId;
     private LocalDate date;
     private LocalTime time;
     private Integer duration;
     private String type;
-    private String notes;
     private String status;
+
+    @PostLoad
+    private void populateTransientFieldsFromPatient() {
+        if (patient != null) {
+            this.patientId = patient.getId();
+        }
+    }
 }
