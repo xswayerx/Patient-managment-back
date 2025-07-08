@@ -30,4 +30,8 @@ public class Appointment {
             this.patientId = patient.getId();
         }
     }
+    public void setPatient(Patient patient) {
+        this.patient = patient;
+        this.patientId = (patient != null) ? patient.getId() : null;
+    }
 }

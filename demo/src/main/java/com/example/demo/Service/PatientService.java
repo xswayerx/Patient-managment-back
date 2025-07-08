@@ -3,6 +3,7 @@ package com.example.demo.Service;
 import com.example.demo.Model.Patient;
 import com.example.demo.Repository.PatientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -31,6 +32,7 @@ public class PatientService {
                 .map(existingPatient -> {
                     patient.setId(id);
                     return patientRepository.save(patient);
+
                 });
     }
 
